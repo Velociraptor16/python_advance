@@ -1,5 +1,15 @@
 def parse(query: str) -> dict:
-    return {}
+    part = query.split('?').pop().split('&')
+    if 'name' in query:
+        if '' in part:
+            part.pop()
+        dictionary = {}
+        for i in part:
+            block = {i[: i.find('=')]: i[i.find('=')+1:]}
+            dictionary.update(block)
+        return dictionary
+    else:
+        return {}
 
 
 if __name__ == '__main__':
