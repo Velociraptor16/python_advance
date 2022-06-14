@@ -1,2 +1,2 @@
 # python_advance
-This is deafault repository for study
+This is repository for study
