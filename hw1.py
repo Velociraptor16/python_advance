@@ -21,7 +21,13 @@ if __name__ == '__main__':
 
 
 def parse_cookie(query: str) -> dict:
-    return {}
+    string = query.split(';')
+    string.pop()
+    dictionary = {}
+    for i in string:
+        block = {i[: i.find('=')]: i[i.find('=') + 1:]}
+        dictionary.update(block)
+    return dictionary
 
 
 if __name__ == '__main__':
